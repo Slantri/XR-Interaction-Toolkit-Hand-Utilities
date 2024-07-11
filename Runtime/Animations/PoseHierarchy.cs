@@ -1,10 +1,14 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace XR.Interaction.Toolkit.Hand.Utilities.Animations
 {
+    [Serializable]
     public class PoseHierarchy
     {
+        [SerializeField]
         private List<Pose> poses = new List<Pose>();
 
 
