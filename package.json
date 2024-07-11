@@ -1,0 +1,26 @@
+{
+  "name": "com.fye.xr.interaction.toolkit.hand.utilities",
+  "displayName": "XR Interaction Toolkit Hand Utilities",
+  "version": "1.0.0-pre.1",
+  "unity": "2021.3",
+  "description": "Utilitiy scripts to add xr hands hand tracking neatly into XR Interaction Toolkit",
+  "keywords": [
+    "XR",
+    "VR",
+    "toolkit",
+    "interaction",
+    "hand"
+  ],
+  "category": "XR",
+  "dependencies": {
+    "com.unity.xr.hands": "1.4.1",
+    "com.unity.xr.interaction.toolkit": "3.0.4"
+  },
+  "samples": [
+    {
+      "displayName": "Player Rig",
+      "description": "Assets and Player Rig Variant With Hand Tracking",
+      "path": "Samples~/Player Rig"
+    }
+  ]
+}

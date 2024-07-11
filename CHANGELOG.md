@@ -1,0 +1,1 @@
+Need to click in Unity window in Editor. Otherwise hand tracking does not work.

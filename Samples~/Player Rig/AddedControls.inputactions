@@ -1,0 +1,204 @@
+{
+    "name": "AddedControls",
+    "maps": [
+        {
+            "name": "XRI Left Utilities",
+            "id": "2bc46df1-72f2-42d4-b9a6-8abda79e5a26",
+            "actions": [
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "df71f5d9-e001-4e58-be74-f5d6c94701df",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Button Teleport",
+                    "type": "Button",
+                    "id": "8879e608-7822-492f-877b-0a6744a83144",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Button Turn",
+                    "type": "Button",
+                    "id": "39371246-365c-4e6a-954f-7c935ed42e39",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Button Move",
+                    "type": "Button",
+                    "id": "970ef965-6af9-4a38-9d05-3057570199c6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Flag Mask Composite Type",
+                    "id": "77e7988c-fc32-4bc7-ac93-7bf9832048c3",
+                    "path": "FlagMaskCompositeType(Mask=256)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Input",
+                    "id": "7a5170f2-875c-4945-8813-b2334bb7ae1d",
+                    "path": "<MetaAimHand>{LeftHand}/aimFlags",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "380b59f2-19de-45c6-9f00-6868f0136955",
+                    "path": "<XRController>{LeftHand}/{MenuButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ca0f255-a29c-44be-92a2-e2ceaeda2e61",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Button Teleport",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f97348df-cdfc-49e0-8baa-90c45b221ec3",
+                    "path": "<XRController>{LeftHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Button Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2332642c-ddfe-4814-9869-e9c1485a4e06",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Button Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "XRI Right Utilities",
+            "id": "9c493622-6550-4a19-a7ef-f55bf508206e",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "557846cb-302f-4f18-8ffb-93b744d5ec5a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Button Move",
+                    "type": "Button",
+                    "id": "79375c26-a067-4f2c-9c97-f5dd92097fe3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Button Turn",
+                    "type": "Button",
+                    "id": "55868f17-7f32-494d-a77d-27a4a937a075",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Button Teleport",
+                    "type": "Button",
+                    "id": "d5f0fb4d-9fd0-476b-b81f-7b78e24a42c2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fa465926-2f21-4712-bf65-0cfdd7e76fb7",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0fd6b444-3dd1-4d69-9059-fbcbaed669c4",
+                    "path": "<XRController>{RightHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Button Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5cfbc832-6494-4fe9-b3a5-750bae77e3c0",
+                    "path": "<XRController>{RightHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Button Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "289706e4-9377-4f9f-b0f3-606a4e6ffefe",
+                    "path": "<XRController>{RightHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Button Teleport",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
