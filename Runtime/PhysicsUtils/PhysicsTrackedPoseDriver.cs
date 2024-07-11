@@ -42,6 +42,17 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.PhysicsUtils
         private TrackingTypes inputTrackingType = TrackingTypes.Position | TrackingTypes.Rotation;
 
 
+        public TrackingTypes TrackingType { get => trackingType; set => trackingType = value; }
+        public InputActionProperty PositionInput { get => positionInput; set => positionInput = value; }
+        public InputActionProperty RotationInput { get => rotationInput; set => rotationInput = value; }
+        public bool IgnoreTrackingState { get => ignoreTrackingState; set => ignoreTrackingState = value; }
+        public InputActionProperty TrackingStateInput { get => trackingStateInput; set => trackingStateInput = value; }
+        public Rigidbody Rigidbody { get => rigidbody; set => rigidbody = value; }
+        public float VelocityDamping { get => velocityDamping; set => velocityDamping = value; }
+        public float VelocityScale { get => velocityScale; set => velocityScale = value; }
+        public float AngVelocityDamping { get => angVelocityDamping; set => angVelocityDamping = value; }
+        public float AngVelocityScale { get => angVelocityScale; set => angVelocityScale = value; }
+
 
         protected void OnEnable()
         {
