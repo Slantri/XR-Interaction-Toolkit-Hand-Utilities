@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using XR.Interaction.Toolkit.Hand.Utilities.Extensions;
 
 
 namespace XR.Interaction.Toolkit.Hand.Utilities.Animations
@@ -8,6 +9,9 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.Animations
     [Serializable]
     public class PoseHierarchy
     {
+        private static readonly List<Transform> hierarchyTransformsTemp = new List<Transform>();
+
+
         [SerializeField]
         private List<Pose> poses = new List<Pose>();
 
@@ -17,7 +21,7 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.Animations
 
         public PoseHierarchy() { }
 
-        public PoseHierarchy(Transform root) : this(GetAllTransforms(root))
+        public PoseHierarchy(Transform root) : this(root.PopulateWithAllChildTransformsDepthFirst(hierarchyTransformsTemp))
         {
 
         }
@@ -30,7 +34,7 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.Animations
 
         public void Apply(Transform root)
         {
-            Apply(GetAllTransforms(root));
+            Apply(root.PopulateWithAllChildTransformsDepthFirst(hierarchyTransformsTemp));
         }
 
         public void Apply(List<Transform> transforms)
@@ -49,7 +53,7 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.Animations
 
         public void Update(Transform root)
         {
-            Update(GetAllTransforms(root));
+            Update(root.PopulateWithAllChildTransformsDepthFirst(hierarchyTransformsTemp));
         }
 
         public void Update(List<Transform> transforms)
@@ -61,20 +65,12 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.Animations
             }
         }
 
-
-        private static List<Transform> GetAllTransforms(Transform root)
+        public void Clone(PoseHierarchy source)
         {
-            var transforms = new List<Transform>();
-            GetAllTransforms(root, transforms);
-            return transforms;
-        }
-
-        private static void GetAllTransforms(Transform transform, List<Transform> transforms)
-        {
-            transforms.Add(transform);
-            for (int i = 0; i < transform.childCount; i++)
+            poses.Clear();
+            foreach (var pose in source.Poses)
             {
-                GetAllTransforms(transform.GetChild(i), transforms);
+                poses.Add(pose);
             }
         }
     }
