@@ -40,6 +40,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Hand Tracked",
+                    "type": "PassThrough",
+                    "id": "05deb49b-debb-4f1d-b25d-b45d40a3b575",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Controller Tracked",
+                    "type": "PassThrough",
+                    "id": "aa7cf8af-cb71-4bda-8598-18aff6306754",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Thumb Down",
+                    "type": "PassThrough",
+                    "id": "778882aa-7feb-4980-a3a1-009bd4b8ffc6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Index In",
+                    "type": "PassThrough",
+                    "id": "95222878-14f1-455f-b83c-ab69a3d5631a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -108,6 +144,94 @@
                     "action": "Button Move",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b14a980-c9d6-40e9-b928-88d48a07e291",
+                    "path": "<XRHandDevice>{LeftHand}/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hand Tracked",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4cd5524b-2c64-4ed4-a858-c9f85c7e1095",
+                    "path": "<XRController>{LeftHand}/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Controller Tracked",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4b1816cc-000f-4d63-a5f2-0102a5c42eb0",
+                    "path": "<OculusTouchController>{LeftHand}/primaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a82b207-e03e-4808-b5cf-7273abbdd373",
+                    "path": "<OculusTouchController>{LeftHand}/secondaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d3e84b3-ff88-49d8-b96d-f251b06d1a96",
+                    "path": "<OculusTouchController>{LeftHand}/thumbrestTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bc0cf990-7a1b-4041-ba63-2ed3a5de4970",
+                    "path": "<OculusTouchController>{LeftHand}/thumbstickTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c440fd2-2a6c-4d88-ab26-95591719581d",
+                    "path": "<OculusTouchController>{LeftHand}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "befcad12-d13b-4028-9c0a-b3661fd69283",
+                    "path": "<OculusTouchController>{LeftHand}/triggerTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Index In",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -115,15 +239,6 @@
             "name": "XRI Right Utilities",
             "id": "9c493622-6550-4a19-a7ef-f55bf508206e",
             "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "557846cb-302f-4f18-8ffb-93b744d5ec5a",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
                 {
                     "name": "Button Move",
                     "type": "Button",
@@ -150,17 +265,64 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Hand Tracked",
+                    "type": "PassThrough",
+                    "id": "fa0dc097-50e8-45b5-92a3-d8d871bf67a5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Controller Tracked",
+                    "type": "PassThrough",
+                    "id": "fd6c84ee-1748-4bd0-b02f-3b8e6807fa03",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Thumb Down",
+                    "type": "PassThrough",
+                    "id": "0072ff43-ddf7-4327-9464-96f50aeddd50",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Index In",
+                    "type": "PassThrough",
+                    "id": "4b33f981-0d9b-4369-a5df-6edbb919f660",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "fa465926-2f21-4712-bf65-0cfdd7e76fb7",
-                    "path": "",
+                    "id": "6a3a28ae-57c2-4ab2-a66b-c390b20c20f0",
+                    "path": "<XRController>{RightHand}/isTracked",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Controller Tracked",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0f459327-9918-4254-87d6-f2c6eec0f139",
+                    "path": "<XRHandDevice>{RightHand}/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hand Tracked",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -194,6 +356,72 @@
                     "processors": "",
                     "groups": "",
                     "action": "Button Teleport",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6923f80-32e1-4ba6-aed7-40ed2cfa5ac6",
+                    "path": "<OculusTouchController>{RightHand}/primaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9fa48ab2-db71-49df-91bd-20f6e36ed3ff",
+                    "path": "<OculusTouchController>{RightHand}/secondaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "72f55a51-f2bd-48c0-8ac9-205a2bca80b1",
+                    "path": "<OculusTouchController>{RightHand}/thumbrestTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "069694bf-81ab-4408-a3e7-7d55ddb3a521",
+                    "path": "<OculusTouchController>{RightHand}/thumbstickTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "92a3a79b-293c-46eb-ae1d-9afad48de08e",
+                    "path": "<OculusTouchController>{RightHand}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thumb Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "473d0053-f282-4926-973c-c262f0b16ea0",
+                    "path": "<OculusTouchController>{RightHand}/triggerTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Index In",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

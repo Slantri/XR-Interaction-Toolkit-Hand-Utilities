@@ -161,6 +161,7 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
             }
             inputData.SetTriggerAndButton(prevInputData.trigger + triggerOffset);
             inputData.SetGripAndButton(prevInputData.grip + gripOffset);
+
             InputState.Change(hand, inputData);
         }
     }
