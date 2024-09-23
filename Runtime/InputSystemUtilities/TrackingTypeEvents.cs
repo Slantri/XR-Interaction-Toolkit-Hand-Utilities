@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -6,12 +7,15 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
 {
     public class TrackingTypeEvents : MonoBehaviour
     {
+        [Flags]
         private enum TrackingTypes
         {
             None = 0,
             Controller = 1,
             Hand = 2,
         }
+
+
         [SerializeField]
         private InputActionProperty isTrackedControllerInput;
         [SerializeField]
@@ -22,8 +26,7 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
         private UnityEvent OnHandTrackingSetToMain = new UnityEvent();
 
 
-        private bool isControllerTracked = false;
-        private bool isHandTracked = false;
+        private TrackingTypes haveTrackingDataFor = TrackingTypes.None;
         private TrackingTypes curTrackingType = TrackingTypes.None;
 
 
@@ -47,8 +50,9 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
             isTrackedHandInputAction.canceled += OnIsTrackedHandCanceled;
             isTrackedHandInputAction.performed += OnIsTrackedHandPerformed;
 
-            isControllerTracked = isTrackedControllerInputAction.ReadValue<float>() > 0.65f;
-            isHandTracked = isTrackedHandInputAction.ReadValue<float>() > 0.65f;
+            haveTrackingDataFor = TrackingTypes.None;
+            SetHaveTrackingDataBit(isTrackedControllerInputAction.ReadValue<float>() > 0.65f, TrackingTypes.Controller);
+            SetHaveTrackingDataBit(isTrackedHandInputAction.ReadValue<float>() > 0.65f, TrackingTypes.Hand);
             RefreshTracking();
         }
 
@@ -77,55 +81,70 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
 
         private void OnIsTrackedHandPerformed(InputAction.CallbackContext context)
         {
-            isHandTracked = context.ReadValue<float>() > 0.95f;
+            SetHaveTrackingDataBit(context.ReadValue<float>() > 0.95f, TrackingTypes.Hand);
             RefreshTracking();
         }
 
         private void OnIsTrackedHandCanceled(InputAction.CallbackContext context)
         {
-            //isHandTracked = false;
+            SetHaveTrackingDataBit(false, TrackingTypes.Hand);
             RefreshTracking();
         }
 
         private void OnIsTrackedHandStarted(InputAction.CallbackContext context)
         {
-            isHandTracked = context.ReadValue<float>() > 0.95f;
+            SetHaveTrackingDataBit(context.ReadValue<float>() > 0.95f, TrackingTypes.Hand);
             RefreshTracking();
         }
 
         private void OnIsTrackedControllerPerformed(InputAction.CallbackContext context)
         {
-            isControllerTracked = context.ReadValue<float>() > 0.95f;
+            SetHaveTrackingDataBit(context.ReadValue<float>() > 0.95f, TrackingTypes.Controller);
             RefreshTracking();
         }
 
         private void OnIsTrackedControllerCanceled(InputAction.CallbackContext context)
         {
-            // isControllerTracked = false;
+            SetHaveTrackingDataBit(false, TrackingTypes.Controller);
             RefreshTracking();
         }
 
         private void OnIsTrackedControllerStarted(InputAction.CallbackContext context)
         {
-            isControllerTracked = context.ReadValue<float>() > 0.95f;
+            SetHaveTrackingDataBit(context.ReadValue<float>() > 0.95f, TrackingTypes.Controller);
             RefreshTracking();
+        }
+
+
+        private void SetHaveTrackingDataBit(bool setOn, TrackingTypes value)
+        {
+            if (setOn)
+            {
+                haveTrackingDataFor |= value;
+            }
+            else
+            {
+                haveTrackingDataFor &= ~value;
+            }
         }
 
         private void RefreshTracking()
         {
             var newTrackingType = curTrackingType;
-            if (newTrackingType == TrackingTypes.Hand && !isHandTracked)
+            if ((newTrackingType & haveTrackingDataFor) != newTrackingType || newTrackingType == TrackingTypes.None)
             {
-                newTrackingType = TrackingTypes.None;
-            }
-            else if (newTrackingType == TrackingTypes.Controller && !isControllerTracked)
-            {
-                newTrackingType = TrackingTypes.None;
-            }
-            if (newTrackingType == TrackingTypes.None)
-            {
-                newTrackingType = isControllerTracked ? TrackingTypes.Controller :
-                (isHandTracked ? TrackingTypes.Hand : TrackingTypes.None);
+                if ((haveTrackingDataFor & TrackingTypes.Controller) == TrackingTypes.Controller)
+                {
+                    newTrackingType = TrackingTypes.Controller;
+                }
+                else if ((haveTrackingDataFor & TrackingTypes.Hand) == TrackingTypes.Hand)
+                {
+                    newTrackingType = TrackingTypes.Hand;
+                }
+                else
+                {
+                    newTrackingType = TrackingTypes.None;
+                }
             }
 
             if (newTrackingType != curTrackingType && newTrackingType != TrackingTypes.None)
