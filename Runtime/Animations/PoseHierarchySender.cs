@@ -31,7 +31,7 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.Animations
 
         protected void OnEnable()
         {
-            receiverSub = poseHierarchyReceiver.Apply(poseHierarchy, priority);
+            receiverSub = poseHierarchyReceiver.Apply(poseHierarchy, priority, false);
         }
 
         protected void OnDisable()

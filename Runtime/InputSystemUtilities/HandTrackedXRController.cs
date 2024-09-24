@@ -1,11 +1,12 @@
 using UnityEngine.InputSystem.Layouts;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.Scripting;
+using UnityEngine.InputSystem.LowLevel;
 
 
 namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
 {
-    [InputControlLayout(stateType = typeof(HandTrackedXRControllerState), commonUsages = new[] { "LeftHand", "RightHand" }, isGenericTypeOfDevice = false, displayName = "XR Hand Driven Controller", updateBeforeRender = true, canRunInBackground = true)]
+    [InputControlLayout(stateType = typeof(HandTrackedXRControllerState), commonUsages = new[] { "LeftHand", "RightHand" }, displayName = "XR Hand Driven Controller")]
     [Preserve]
     public class HandTrackedXRController : UnityEngine.InputSystem.XR.XRController
     {
@@ -49,6 +50,14 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
             secondary2DAxisTouch = GetChildControl<ButtonControl>(nameof(secondary2DAxisTouch));
             batteryLevel = GetChildControl<AxisControl>(nameof(batteryLevel));
             userPresence = GetChildControl<ButtonControl>(nameof(userPresence));
+        }
+
+
+        protected override unsafe long ExecuteCommand(InputDeviceCommand* commandPtr)
+        {
+            return HandTrackedXRControllerManager.TryExecuteCommand(commandPtr, out var result)
+                ? result
+                : base.ExecuteCommand(commandPtr);
         }
     }
 }

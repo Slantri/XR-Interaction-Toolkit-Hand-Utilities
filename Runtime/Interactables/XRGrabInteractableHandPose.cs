@@ -53,7 +53,7 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.Interactables
             {
                 sub.Dispose();
             }
-            interactorToSub[baseInteractor] = receiver.Apply(poseHierarchy, 15.0f);
+            interactorToSub[baseInteractor] = receiver.Apply(poseHierarchy, 15.0f, true);
         }
 
         protected override void OnSelectExiting(SelectExitEventArgs args)

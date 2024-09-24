@@ -73,8 +73,14 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.Animations
         }
 
 
-        public IDisposable Apply(PoseHierarchy poseHierarchy, float priority)
+        public IDisposable Apply(PoseHierarchy poseHierarchy, float priority, bool applyActivePosesOffset)
         {
+            if (applyActivePosesOffset && prioritySub != null)
+            {
+                var pose0 = prioritySub.PoseHierarchy.Poses[0];
+                poseHierarchy = new PoseHierarchy(poseHierarchy);
+                poseHierarchy.Poses[0] = poseHierarchy.Poses[0].GetTransformedBy(pose0);
+            }
             return new PoseHierarchySubscription(this, poseHierarchy, priority);
         }
 

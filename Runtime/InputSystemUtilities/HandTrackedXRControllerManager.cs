@@ -17,6 +17,27 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
     [DefaultExecutionOrder(XRInteractionUpdateOrder.k_DeviceSimulator)]
     public class HandTrackedXRControllerManager : MonoBehaviour
     {
+        internal static unsafe bool TryExecuteCommand(InputDeviceCommand* commandPtr, out long result)
+        {
+            var type = commandPtr->type;
+            if (type == RequestSyncCommand.Type)
+            {
+                result = InputDeviceCommand.GenericSuccess;
+                return true;
+            }
+
+            if (type == QueryCanRunInBackground.Type)
+            {
+                ((QueryCanRunInBackground*)commandPtr)->canRunInBackground = true;
+                result = InputDeviceCommand.GenericSuccess;
+                return true;
+            }
+
+            result = default;
+            return false;
+        }
+
+
         [Serializable]
         public enum HandTypes
         {
@@ -81,9 +102,11 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
                     }.ToJson(),
                 };
 
-                this.hand = UnityEngine.InputSystem.InputSystem.AddDevice(descLeftHand) as HandTrackedXRController;
+                this.hand = InputSystem.AddDevice(descLeftHand) as HandTrackedXRController;
                 if (this.hand != null)
-                    UnityEngine.InputSystem.InputSystem.SetDeviceUsage(this.hand, hand);
+                {
+                    InputSystem.SetDeviceUsage(this.hand, hand);
+                }
             }
             else if (!hand.added)
             {
@@ -161,8 +184,8 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
             }
             inputData.SetTriggerAndButton(prevInputData.trigger + triggerOffset);
             inputData.SetGripAndButton(prevInputData.grip + gripOffset);
-
             InputState.Change(hand, inputData);
+            InputSystem.QueueStateEvent(hand, inputData);
         }
     }
 }

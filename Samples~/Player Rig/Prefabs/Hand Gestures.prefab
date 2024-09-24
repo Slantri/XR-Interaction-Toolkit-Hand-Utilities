@@ -51,7 +51,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handType: 1
+  interactor: {fileID: 0}
   root: {fileID: 0}
+  scalarGravity: 10
 --- !u!1 &2287417117018337882
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +134,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_MinimumHoldTime: 0.2
-  m_GestureDetectionInterval: 0.1
+  m_MinimumHoldTime: 0.08
+  m_GestureDetectionInterval: 0.02
   m_StaticGestures: []
   m_Highlight: {fileID: 2363598062743348422}
 --- !u!1 &3352129629526592540
@@ -216,8 +218,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_MinimumHoldTime: 0.2
-  m_GestureDetectionInterval: 0.1
+  m_MinimumHoldTime: 0.08
+  m_GestureDetectionInterval: 0.02
   m_StaticGestures: []
   m_Highlight: {fileID: 2363598062743348422}
 --- !u!1 &4309975499713695313
@@ -375,8 +377,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_MinimumHoldTime: 0.2
-  m_GestureDetectionInterval: 0.1
+  m_MinimumHoldTime: 0.08
+  m_GestureDetectionInterval: 0.02
   m_StaticGestures: []
   m_Highlight: {fileID: 2363598062743348422}
 --- !u!1 &7052084615591270073
@@ -459,8 +461,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_MinimumHoldTime: 0.2
-  m_GestureDetectionInterval: 0.1
+  m_MinimumHoldTime: 0.08
+  m_GestureDetectionInterval: 0.02
   m_StaticGestures: []
   m_Highlight: {fileID: 2363598062743348422}
 --- !u!1 &7942658779558425648
@@ -645,7 +647,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_MinimumHoldTime: 0.2
-  m_GestureDetectionInterval: 0.1
+  m_MinimumHoldTime: 0.08
+  m_GestureDetectionInterval: 0.02
   m_StaticGestures: []
   m_Highlight: {fileID: 2363598062743348422}
