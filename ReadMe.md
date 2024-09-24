@@ -43,7 +43,7 @@ This is a utilities package to add extra functionality to XR Hands and XR Intera
     - Space key pauses if you have clicked in game view
 - In Scene View
     - Click on Interactable object
-    - Click on Posed Hand
+    - Shift+Click on Posed Hand
 - Menu XRITUtil/PoseHierarchy/GenerateHandPose
 - Save Pose
 - In Edit Mode change the interactable to use XRGrabInteractableHandPose
