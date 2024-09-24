@@ -53,7 +53,6 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
             haveTrackingDataFor = TrackingTypes.None;
             SetHaveTrackingDataBit(isTrackedControllerInputAction.ReadValue<float>() > 0.65f, TrackingTypes.Controller);
             SetHaveTrackingDataBit(isTrackedHandInputAction.ReadValue<float>() > 0.65f, TrackingTypes.Hand);
-            RefreshTracking();
         }
 
         protected void OnDisable()
@@ -81,38 +80,32 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
 
         private void OnIsTrackedHandPerformed(InputAction.CallbackContext context)
         {
-            SetHaveTrackingDataBit(context.ReadValue<float>() > 0.95f, TrackingTypes.Hand);
-            RefreshTracking();
+            SetHaveTrackingDataBit(context.ReadValueAsButton(), TrackingTypes.Hand);
         }
 
         private void OnIsTrackedHandCanceled(InputAction.CallbackContext context)
         {
             SetHaveTrackingDataBit(false, TrackingTypes.Hand);
-            RefreshTracking();
         }
 
         private void OnIsTrackedHandStarted(InputAction.CallbackContext context)
         {
-            SetHaveTrackingDataBit(context.ReadValue<float>() > 0.95f, TrackingTypes.Hand);
-            RefreshTracking();
+            SetHaveTrackingDataBit(context.ReadValueAsButton(), TrackingTypes.Hand);
         }
 
         private void OnIsTrackedControllerPerformed(InputAction.CallbackContext context)
         {
-            SetHaveTrackingDataBit(context.ReadValue<float>() > 0.95f, TrackingTypes.Controller);
-            RefreshTracking();
+            SetHaveTrackingDataBit(context.ReadValueAsButton(), TrackingTypes.Controller);
         }
 
         private void OnIsTrackedControllerCanceled(InputAction.CallbackContext context)
         {
             SetHaveTrackingDataBit(false, TrackingTypes.Controller);
-            RefreshTracking();
         }
 
         private void OnIsTrackedControllerStarted(InputAction.CallbackContext context)
         {
-            SetHaveTrackingDataBit(context.ReadValue<float>() > 0.95f, TrackingTypes.Controller);
-            RefreshTracking();
+            SetHaveTrackingDataBit(context.ReadValueAsButton(), TrackingTypes.Controller);
         }
 
 
@@ -128,7 +121,7 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
             }
         }
 
-        private void RefreshTracking()
+        private void LateUpdate()
         {
             var newTrackingType = curTrackingType;
             if ((newTrackingType & haveTrackingDataFor) != newTrackingType || newTrackingType == TrackingTypes.None)
@@ -146,7 +139,6 @@ namespace XR.Interaction.Toolkit.Hand.Utilities.InputSystemUtilities
                     newTrackingType = TrackingTypes.None;
                 }
             }
-
             if (newTrackingType != curTrackingType && newTrackingType != TrackingTypes.None)
             {
                 curTrackingType = newTrackingType;

@@ -43,12 +43,12 @@
                 },
                 {
                     "name": "Hand Tracked",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "05deb49b-debb-4f1d-b25d-b45d40a3b575",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Controller Tracked",
@@ -148,7 +148,7 @@
                 {
                     "name": "",
                     "id": "1b14a980-c9d6-40e9-b928-88d48a07e291",
-                    "path": "<XRHandDevice>{LeftHand}/isTracked",
+                    "path": "<MetaAimHand>{LeftHand}/isTracked",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -159,7 +159,7 @@
                 {
                     "name": "",
                     "id": "4cd5524b-2c64-4ed4-a858-c9f85c7e1095",
-                    "path": "<XRController>{LeftHand}/isTracked",
+                    "path": "<OculusTouchController>{LeftHand}/isTracked",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -268,12 +268,12 @@
                 },
                 {
                     "name": "Hand Tracked",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "fa0dc097-50e8-45b5-92a3-d8d871bf67a5",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Controller Tracked",
@@ -307,7 +307,7 @@
                 {
                     "name": "",
                     "id": "6a3a28ae-57c2-4ab2-a66b-c390b20c20f0",
-                    "path": "<XRController>{RightHand}/isTracked",
+                    "path": "<OculusTouchController>{RightHand}/isTracked",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -318,7 +318,7 @@
                 {
                     "name": "",
                     "id": "0f459327-9918-4254-87d6-f2c6eec0f139",
-                    "path": "<XRHandDevice>{RightHand}/isTracked",
+                    "path": "<MetaAimHand>{RightHand}/isTracked",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
