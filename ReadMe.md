@@ -1,7 +1,7 @@
-#XR Interaction Toolkit Hand Utilities
+# XR Interaction Toolkit Hand Utilities
 This is a utilities package to add extra functionality to XR Hands and XR Interaction Toolkit.
 
-##Functionality
+## Functionality
 - Hand Tracking and Controller Support by Default
 - Interactables:
     - XRGrabInteractableHandPose: Supports a left and right hand grab hand pose for when grabbing an interactable
@@ -12,7 +12,7 @@ This is a utilities package to add extra functionality to XR Hands and XR Intera
     - Plam Up three finger curl for smooth locomotion with pinch activate
     - Plam To Center Three finger curl rotation with pinch to activate
 
-##Setup
+## Setup
 - Install XR Interaction Toolkit v3.0.4
     - Samples to Import:
         - Starter Assets
@@ -31,12 +31,12 @@ This is a utilities package to add extra functionality to XR Hands and XR Intera
         - Meta Hand Tracking Aim
         - Meta Quest Support (Android and if targeting Oculus)
 
-##Usage
+## Usage
 - Setup scene as you would for a normal Unity XR Interaction Toolkit project
 - Replace the Player Rig with Samples\XR Interaction Toolkit Hand Utilities\1.0.0-pre.1\Player Rig\Prefabs\XR Origin (XR Rig) Variant.prefab
 - Click Play
 
-##Creating A Hand Pose
+## Creating A Hand Pose
 - Enter Play Mode
 - Position hand on Interactable in desired pose
 - Pause Editor, Click on the Interactable in Scene View, Shift+Click on the Hand in scene View
