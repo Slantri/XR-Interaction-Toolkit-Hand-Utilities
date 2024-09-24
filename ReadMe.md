@@ -33,13 +33,17 @@ This is a utilities package to add extra functionality to XR Hands and XR Intera
 
 ## Usage
 - Setup scene as you would for a normal Unity XR Interaction Toolkit project
-- Replace the Player Rig with Samples\XR Interaction Toolkit Hand Utilities\1.0.0-pre.1\Player Rig\Prefabs\XR Origin (XR Rig) Variant.prefab
+- Replace the Player Rig with Samples\XR Interaction Toolkit Hand Utilities\1.0.0-pre.1\Player Rig\Prefabs\Player Rig.prefab
 - Click Play
 
 ## Creating A Hand Pose
 - Enter Play Mode
 - Position hand on Interactable in desired pose
-- Pause Editor, Click on the Interactable in Scene View, Shift+Click on the Hand in scene View
+- Pause Editor 
+    - Space key pauses if you have clicked in game view
+- In Scene View
+    - Click on Interactable object
+    - Click on Posed Hand
 - Menu XRITUtil/PoseHierarchy/GenerateHandPose
 - Save Pose
 - In Edit Mode change the interactable to use XRGrabInteractableHandPose

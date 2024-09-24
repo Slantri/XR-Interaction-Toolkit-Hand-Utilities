@@ -52,12 +52,12 @@
                 },
                 {
                     "name": "Controller Tracked",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "aa7cf8af-cb71-4bda-8598-18aff6306754",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Thumb Down",
@@ -277,12 +277,12 @@
                 },
                 {
                     "name": "Controller Tracked",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "fd6c84ee-1748-4bd0-b02f-3b8e6807fa03",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Thumb Down",
